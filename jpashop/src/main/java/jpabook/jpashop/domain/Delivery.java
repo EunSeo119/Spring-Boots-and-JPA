@@ -15,7 +15,7 @@ public class Delivery {
     @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")    //거울이죵~!, 연관관계 매핑해죠
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)    //거울이죵~!, 연관관계 매핑해죠
     private Order order;
 
     @Embedded   //내장 타입이기 때문에 써줌
