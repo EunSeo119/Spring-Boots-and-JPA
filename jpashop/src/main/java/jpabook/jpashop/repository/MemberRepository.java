@@ -1,17 +1,21 @@
 package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository     //스프링 빈에 등록하여 컴포넌트 스캔 할 수 있게 만들어줌!
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext     //스프링이 EntityManager 만들어서 넣어주게 함!
-    private EntityManager em;
+    private final EntityManager em;
+
+//    public MemberRepository(EntityManager em) {
+//        this.em = em;
+//    }   //일케 하면 위에 @PersistenceContext를 @Autowired로 바꿔 줄 수 있다! => 그래서 final 붙이고 @RequiredArgsConstructor하면 이거랑 @Autowired 업애줌!
 
     public void save(Member member) {
         em.persist(member);     //member 집어넣어 저장하게 해주는 명령어, insert 쿼리를 날려줌!
