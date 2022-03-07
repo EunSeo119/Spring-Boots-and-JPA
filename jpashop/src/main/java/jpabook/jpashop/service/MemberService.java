@@ -16,12 +16,6 @@ public class MemberService {
 
     private final MemberRepository memberRepository;    //변경할 일 없을 땐 앞에 final을 써줌!
 
-//    @Autowired      //스프링이 스프링 빈에 등록되어 있는 멤버 repository를 인젝션 해줌!(필드 인젝션)
-//    public MemberService(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-//@RequiredArgsConstructor 썼기 때문에 없어도 됨! @Autowired는 생성자만 있을 땐 자동으로 붙여줌!
-
     /**
      * 회원가입
      */

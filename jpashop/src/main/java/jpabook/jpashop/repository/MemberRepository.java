@@ -13,10 +13,6 @@ public class MemberRepository {
 
     private final EntityManager em;
 
-//    public MemberRepository(EntityManager em) {
-//        this.em = em;
-//    }   //일케 하면 위에 @PersistenceContext를 @Autowired로 바꿔 줄 수 있다! => 그래서 final 붙이고 @RequiredArgsConstructor하면 이거랑 @Autowired 업애줌!
-
     public void save(Member member) {
         em.persist(member);     //member 집어넣어 저장하게 해주는 명령어, insert 쿼리를 날려줌!
     }
