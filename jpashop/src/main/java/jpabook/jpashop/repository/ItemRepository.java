@@ -17,8 +17,8 @@ public class ItemRepository {
         if (item.getId() == null) {     //id가 기존에 없는 새거라면
             em.persist(item);           //새로 넣어줌
         } else {
-            em.merge(item);             //기존에 있던거면 업데이트
-        }
+            em.merge(item);             //기존에 있던거면 업데이트트
+       }
     }
 
     public Item findOne(Long id) {
